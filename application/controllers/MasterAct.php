@@ -18,6 +18,8 @@ class MasterAct extends CI_Controller {
         $ret = array();
         foreach($sql['row'] as $sq){
             $sq['standar_baku'] = getData('',array('id'=>$sq['standar_baku']),'','','master_category','')['row'][0]['name_category'];
+            $sq['grup_pekerjaan_utama'] = getData('',array('id'=>$sq['grup_pekerjaan_utama']),'','','master_category','')['row'][0]['name_category'];
+            $sq['grup_pelaksana'] = getData('',array('id'=>$sq['grup_pelaksana']),'','','master_category','')['row'][0]['name_category'];
             $sq['list_komponen'] = getData('',array('master_template_id'=>$sq['id']),'','','master_template_child','')['row'];
             array_push($ret,$sq);
         }
