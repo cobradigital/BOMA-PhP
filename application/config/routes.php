@@ -53,38 +53,7 @@ $route['default_controller'] = 'C_user/check_data';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['dashboard'] = 'C_dashboard';
-// User
-$route['login-action'] = 'Auth/authenticationuser';
-$route['logout-action'] = 'Auth/logout_user';
-$route['login'] = 'C_user';
-$route['check-data'] = 'C_user/check_data';
-$route['detail-data/(:any)'] = 'C_user/check_detail';
-$route['user'] = 'C_datauser';
-$route['user/add'] = 'C_datauser/view_add_user';
-$route['user/add/(:any)'] = 'C_datauser/view_add_user';
 
 // Proses
-$route['active'] = 'C_dataactive';
-$route['done'] = 'C_datadone';
-$route['detail'] = 'C_datadetail';
-$route['detail/(:any)'] = 'C_datadetail';
-$route['print/(:any)'] = 'C_user/check_detail';
-$route['comment_reply'] = 'CommentAct/reply';
-$route['proses_olahan_data'] = 'MasterAct/save_olahan_data';
-$route['proses_kepdis'] = 'MasterAct/save_keputusan_dinas';
-$route['inquiry_data'] = 'MasterAct/get_permohonan_selesai';
-$route['save_izin_req'] = 'MasterAct/save_izin_req';
-$route['save_izin_simpulan'] = 'MasterAct/save_kesimpulan_bidang';
-$route['delete_izin_req'] = 'MasterAct/delete_izin_req';
-$route['add_user'] = 'MasterAct/add_user';
-$route['get_jabatan'] = 'MasterAct/get_jabatan';
-$route['delete_user'] = 'MasterAct/delete_user';
-$route['kesimpulan_bidang/(:any)'] = 'MasterAct/actKesimpulanBidang';
-$route['save_intensitas'] = 'MasterAct/actIntensitas';
-
-// GetData
-$route['inquery_request'] = 'NoAuth/getForJakevo';
-$route['testreq'] = 'NoAuth/testGet';
-$route['testmail'] = 'ServiceGis/asdsa';
-$route['recaptcha'] = 'C_user/c_captcha';
+$route['get_all_template'] = 'MasterAct/getListTemplateRAP';
+$route['save_template'] = 'MasterAct/save_template';
