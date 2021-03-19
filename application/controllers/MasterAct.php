@@ -68,7 +68,7 @@ class MasterAct extends CI_Controller {
             if($sql){
                 $this->db->where('id',$id);
                 $this->db->delete('master_template');
-                $res = returnResult(true,"berhasil");
+                $res = returnResultCustom(true,"berhasil");
             }else{
                 $res = returnResultErrorDB();
             }
