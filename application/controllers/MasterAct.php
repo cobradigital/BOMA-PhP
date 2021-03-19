@@ -10,24 +10,69 @@ header('Access-Control-Allow-Headers: Content-Type, Content-Range, Content-Dispo
 class MasterAct extends CI_Controller {
     public function getListTemplateRAP(){
         $name = $this->input->get('name');
+        $idpek = ($this->input->post('pekerjaan'));
+        
         $whereArgs = array();
-        if($name!="'"){
-            $whereArgs = array('jenis_pekerjaan_parent'=>'like '.$name);
+        if($name!=""){
+            // $whereArgs = array('jenis_pekerjaan_parent'=>'like '.$name);
+            $whereArgs = array('master_type_id'=>'38','name_category'=>'like '.$name);
         }
-        $sql = getData('',$whereArgs,'','','master_template','');
-        $ret = array();
-        foreach($sql['row'] as $sq){
-            $sq['jenis_pekerjaan_parent'] = getData('',array('id'=>$sq['jenis_pekerjaan_parent']),'','','master_category','')['row'][0]['name_category'];
-            $sq['standar_baku'] = getData('',array('id'=>$sq['standar_baku']),'','','master_category','')['row'][0]['name_category'];
-            $sq['grup_pekerjaan_utama'] = getData('',array('id'=>$sq['grup_pekerjaan_utama']),'','','master_category','')['row'][0]['name_category'];
-            $sq['grup_pelaksana'] = getData('',array('id'=>$sq['grup_pelaksana']),'','','master_category','')['row'][0]['name_category'];
-            $sq['list_komponen'] = getData('',array('master_template_id'=>$sq['id']),'','','master_template_child','')['row'];
-            array_push($ret,$sq);
+        $getdatacat = getData('',$whereArgs,'','','master_category','');
+        
+        if($getdatacat['rowCount']>0){
+            $whereArgsBawah = array();
+            if($name!=""){
+                $arrayid = array();
+                foreach($getdatacat['row'] as $gc){
+                    array_push($arrayid,$gc['id']);
+                }
+                $idarr = implode(",",$arrayid);
+                $whereArgsBawah = array('jenis_pekerjaan_parent'=> 'in '.$idarr);
+            }else if($idpek!=""){
+                $idnya = array();
+                for($i = 0; $i <sizeof($idpek);$i++){
+                    array_push($idnya, $idpek[$i]);
+                }
+                $newid = implode(",",$idnya);
+                $whereArgsBawah = array('id'=>'in '.$newid);
+            }
+            $sql = getData('',$whereArgsBawah,'','','master_template','');
+            
+            $ret = array();
+            foreach($sql['row'] as $sq){
+                $sq['jenis_pekerjaan_parent_teks'] = getData('',array('id'=>$sq['jenis_pekerjaan_parent']),'','','master_category','')['row'][0]['name_category'];
+                $sq['standar_baku_teks'] = getData('',array('id'=>$sq['standar_baku']),'','','master_category','')['row'][0]['name_category'];
+                $sq['grup_pekerjaan_utama_teks'] = getData('',array('id'=>$sq['grup_pekerjaan_utama']),'','','master_category','')['row'][0]['name_category'];
+                $sq['grup_pelaksana_teks'] = getData('',array('id'=>$sq['grup_pelaksana']),'','','master_category','')['row'][0]['name_category'];
+                $sq['list_komponen'] = getData('',array('master_template_id'=>$sq['id']),'','','master_template_child','')['row'];
+                array_push($ret,$sq);
+            }
+            $res = array(
+                'result'=>$ret,
+                'success'=>true
+            );
+        }else{
+            $res = returnResultErrorDB();
         }
-        $res = array(
-            'result'=>$ret,
-            'success'=>true
-        );
+        echo json_encode($res);
+    }
+
+    public function delete_template()
+    {
+        $id = $this->input->post('id');
+        if($id==""){
+            $res = returnResult(false,'ID Not Found');
+        }else{
+            $this->db->where('master_template_id',$id);
+            $sql = $this->db->delete('master_template_child');
+            if($sql){
+                $this->db->where('id',$id);
+                $this->db->delete('master_template');
+                $res = returnResult(true,"berhasil");
+            }else{
+                $res = returnResultErrorDB();
+            }
+        }
         echo json_encode($res);
     }
 
@@ -41,10 +86,19 @@ class MasterAct extends CI_Controller {
         unset($input->items);
 
         $this->db->trans_start();
-        $inputparent = $this->db->insert('master_template',$input);
+        if($input->id!=""){
+            $this->db->where('id',$input->id);
+            $inputparent = $this->db->update('master_template',$input);
+        }else{
+            $inputparent = $this->db->insert('master_template',$input);
+        }
         if($inputparent){
-
             $id = $this->db->insert_id();
+            if($input->id!=""){
+                $id = $input->id;
+                $this->db->where('master_template_id',$id);
+                $this->db->delete('master_template_child');
+            }
             $arrayitems = array();
             for($i = 0; $i < sizeof($items); $i++){
                 $elm = $items[$i];

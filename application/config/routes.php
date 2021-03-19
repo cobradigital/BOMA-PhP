@@ -57,3 +57,4 @@ $route['translate_uri_dashes'] = FALSE;
 // Proses
 $route['get_all_template'] = 'MasterAct/getListTemplateRAP';
 $route['save_template'] = 'MasterAct/save_template';
+$route['delete_template'] = 'MasterAct/save_template';

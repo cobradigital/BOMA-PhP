@@ -276,6 +276,27 @@ if ( ! function_exists('returnResultCustomTransfer'))
     }
 }
 
+if ( ! function_exists('uploadPhoto'))
+{
+    function uploadPhoto($type, $namefile, $counting = null)
+	{
+		if(@$_FILES[$namefile]==""){
+			return false;
+		}
+		$file = ($_FILES[$namefile]);
+		if($file['name']==''){
+			return false;
+		}
+		$ext = pathinfo($file['name'], PATHINFO_EXTENSION);
+		$name = date('YmdHis').'_'.$file['name'];
+		$tmpname = $file['tmp_name'];
+		$uploads_dir = './assets/images/'.$type.'/';
+
+		move_uploaded_file($tmpname, "$uploads_dir/$name");
+		return $name;
+	}
+}
+
 if ( ! function_exists('sendMailRegisConfirm'))
 {
     function sendMailRegisConfirm($to,$subj,$msg)
