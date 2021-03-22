@@ -280,19 +280,41 @@ if ( ! function_exists('uploadPhoto'))
 {
     function uploadPhoto($type, $namefile, $counting = null)
 	{
-		if(@$_FILES[$namefile]==""){
-			return false;
-		}
-		$file = ($_FILES[$namefile]);
-		if($file['name']==''){
-			return false;
-		}
-		$ext = pathinfo($file['name'], PATHINFO_EXTENSION);
-		$name = date('YmdHis').'_'.$file['name'];
-		$tmpname = $file['tmp_name'];
-		$uploads_dir = './assets/images/'.$type.'/';
+		$name = [];
+        if($counting!=null){
 
-		move_uploaded_file($tmpname, "$uploads_dir/$name");
+            $file = $_FILES[$namefile];
+            for($i = 0; $i < sizeof($file['name']); $i++){
+                $filenamenya = $file['name'][$i];
+                $filetmpnamenya = $file['tmp_name'][$i];
+
+                $ext = pathinfo($filenamenya, PATHINFO_EXTENSION);
+                $nameset = date('YmdHis').'_'.md5($filenamenya).".".$ext;
+                $tmpname = $filetmpnamenya;
+                $uploads_dir = './assets/images/'.$type.'/';
+
+                move_uploaded_file($tmpname, "$uploads_dir/$nameset");
+                array_push($name,$nameset);
+            }
+        }else{
+
+            if(@$_FILES[$namefile]==""){
+                return false;
+            }
+            $file = ($_FILES[$namefile]);
+            if($file['name']==''){
+                return false;
+            }
+            $ext = pathinfo($file['name'], PATHINFO_EXTENSION);
+            $name = date('YmdHis').'_'.md5($file['name']).".".$ext;
+            $tmpname = $file['tmp_name'];
+            $uploads_dir = './assets/images/'.$type.'/';
+
+            move_uploaded_file($tmpname, "$uploads_dir/$name");
+        }
+        if($counting!=null){
+            return implode(',',$name);
+        }
 		return $name;
 	}
 }

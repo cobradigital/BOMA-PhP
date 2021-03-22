@@ -11,7 +11,8 @@ class MasterAct extends CI_Controller {
     public function getListTemplateRAP(){
         $name = $this->input->get('name');
         $idpek = ($this->input->post('pekerjaan'));
-        
+        $sb = $this->input->post('standar_baku');
+        $jpp = $this->input->post('jenis_pekerjaan_parent');
         $whereArgs = array();
         if($name!=""){
             // $whereArgs = array('jenis_pekerjaan_parent'=>'like '.$name);
@@ -35,6 +36,11 @@ class MasterAct extends CI_Controller {
                 }
                 $newid = implode(",",$idnya);
                 $whereArgsBawah = array('id'=>'in '.$newid);
+            }else if($sb!="" && $jpp!=""){
+                $whereArgsBawah = array(
+                    'standar_baku'=>$sb,
+                    'jenis_pekerjaan_parent'=>$jpp
+                );
             }
             $sql = getData('',$whereArgsBawah,'','','master_template','');
             

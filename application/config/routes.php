@@ -58,3 +58,6 @@ $route['translate_uri_dashes'] = FALSE;
 $route['get_all_template'] = 'MasterAct/getListTemplateRAP';
 $route['save_template'] = 'MasterAct/save_template';
 $route['delete_template'] = 'MasterAct/delete_template';
+
+// SPK
+$route['upload_spk'] = 'DocumentsAct/spk_upload';
