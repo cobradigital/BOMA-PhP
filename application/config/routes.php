@@ -60,4 +60,5 @@ $route['save_template'] = 'MasterAct/save_template';
 $route['delete_template'] = 'MasterAct/delete_template';
 
 // SPK
+$route['get_spk'] = 'DocumentsAct/get_spk';
 $route['upload_spk'] = 'DocumentsAct/spk_upload';

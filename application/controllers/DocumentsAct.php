@@ -24,4 +24,19 @@ class DocumentsAct extends CI_Controller {
         echo json_encode($res);
         
     }
+
+    public function get_spk()
+    {
+        $type = $this->input->get('type');
+        $sql = getData('',array('type_file'=>$type),'','','projects_spk','');
+        if($sql['rowCount']>0){
+            $res = array(
+                'success'=>true,
+                'result'=>$sql['row']
+            );
+        }else{
+            $res = returnResultErrorDB();
+        }
+        echo json_encode($res);
+    }
 }
