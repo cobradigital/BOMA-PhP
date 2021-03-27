@@ -57,29 +57,29 @@ class MY_Controller extends RestController
         return $this->user_data->sub;
     }
 
-    public function filter($filter, $custom=false)
+    public function filter($filter=false, $custom=false)
     {
         $q = $this->db;
-
-        foreach ($filter as $key => $value) {
-            if (array_key_exists($key, $this->filters)) {
-                if (!empty($value)){
-
-                    if (array_key_exists('MATCH', $this->filters[$key])) {
-                        $q = $this->db->where($this->filters[$key]["MATCH"], $value);
-                    }
-        
-                    if (array_key_exists('LIKE', $this->filters[$key])) {
-                        $q = $this->db->like($this->filters[$key]["LIKE"], $value);
-                    }
-
-                    if (array_key_exists('IN', $this->filters[$key])) {
-                        $q = $this->db->where_in($this->filters[$key]["IN"], explode(",",$value));
-
+        if($filter) {
+            foreach ($filter as $key => $value) {
+                if (array_key_exists($key, $this->filters)) {
+                    if (!empty($value)){
+    
+                        if (array_key_exists('MATCH', $this->filters[$key])) {
+                            $q = $this->db->where($this->filters[$key]["MATCH"], $value);
+                        }
+            
+                        if (array_key_exists('LIKE', $this->filters[$key])) {
+                            $q = $this->db->like($this->filters[$key]["LIKE"], $value);
+                        }
+    
+                        if (array_key_exists('IN', $this->filters[$key])) {
+                            $q = $this->db->where_in($this->filters[$key]["IN"], explode(",",$value));
+    
+                        }
                     }
                 }
             }
-
         }
 
         if($custom){
