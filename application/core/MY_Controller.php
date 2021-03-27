@@ -32,7 +32,6 @@ class MY_Controller extends RestController
         $this->methods['users_post']['limit'] = 100; // 100 requests per hour per user/key
         $this->methods['users_delete']['limit'] = 50; // 50 requests per hour per user/key
 
-        //JWT Auth middleware
         $headers = $this->input->get_request_header('Authorization');
 
         $kunci = $this->config->item('thekey'); 
