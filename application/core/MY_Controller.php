@@ -1,17 +1,18 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 
-// This can be removed if you use __autoload() in config.php OR use Modular Extensions
-/** @noinspection PhpIncludeInspection */
-// require_once APPPATH . '/libraries/RestController.php';
 require APPPATH . 'libraries/RestController.php';
 require APPPATH . 'libraries/Format.php';
 require APPPATH . 'libraries/JWT.php';
 require APPPATH . 'libraries/BeforeValidException.php';
 require APPPATH . 'libraries/ExpiredException.php';
 require APPPATH . 'libraries/SignatureInvalidException.php';
+require APPPATH . 'libraries/snowflake/Snowflake.php';
+
 use \Firebase\JWT\JWT;
+use Godruoyi\Snowflake\Snowflake;
 
 use chriskacerguis\RestServer\RestController;
+
 
 
 class MY_Controller extends RestController
@@ -28,6 +29,7 @@ class MY_Controller extends RestController
 
     public function auth()
     {
+        
         $this->methods['users_get']['limit'] = 500; // 500 requests per hour per user/key
         $this->methods['users_post']['limit'] = 100; // 100 requests per hour per user/key
         $this->methods['users_delete']['limit'] = 50; // 50 requests per hour per user/key
@@ -54,6 +56,28 @@ class MY_Controller extends RestController
     public function userid()
     {
         return $this->user_data->sub;
+    }
+
+    public function GenerateID()
+    {
+        $currentTime = date("Y-m-d");
+        $snowflake = new \Godruoyi\Snowflake\Snowflake;
+        $snowflake->setSequenceResolver(function ($currentTime) {
+            static $lastTime;
+            static $sequence;
+
+            if ($lastTime == $currentTime) {
+                ++$sequence;
+            } else {
+                $sequence = 0;
+            }
+
+            $lastTime = $currentTime;
+
+            return $sequence;
+        })->id();
+
+        return $snowflake->id();
     }
 
     public function filter($filter=false, $custom=false)
