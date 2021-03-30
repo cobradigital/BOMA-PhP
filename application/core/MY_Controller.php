@@ -111,4 +111,16 @@ class MY_Controller extends RestController
 
         return $q;
     }
+
+
+  
+    public function Result($msg, $data)
+    {
+        $result = array(
+            "message" => $msg,
+            "data" => $data
+        );
+ 
+        return $result;
+    }
 }
