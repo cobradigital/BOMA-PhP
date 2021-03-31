@@ -1269,3 +1269,153 @@ INFO - 2021-03-30 10:04:28 --> Language file loaded: language/english/rest_contr
 INFO - 2021-03-30 10:04:28 --> Helper loaded: inflector_helper
 INFO - 2021-03-30 10:04:28 --> Final output sent to browser
 DEBUG - 2021-03-30 10:04:28 --> Total execution time: 1.3428
+ERROR - 2021-03-30 10:51:14 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+INFO - 2021-03-30 10:51:14 --> Config Class Initialized
+INFO - 2021-03-30 10:51:14 --> Hooks Class Initialized
+DEBUG - 2021-03-30 10:51:14 --> UTF-8 Support Enabled
+INFO - 2021-03-30 10:51:14 --> Utf8 Class Initialized
+INFO - 2021-03-30 10:51:14 --> URI Class Initialized
+INFO - 2021-03-30 10:51:14 --> Router Class Initialized
+INFO - 2021-03-30 10:51:14 --> Output Class Initialized
+INFO - 2021-03-30 10:51:14 --> Security Class Initialized
+DEBUG - 2021-03-30 10:51:14 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-03-30 10:51:14 --> Input Class Initialized
+INFO - 2021-03-30 10:51:14 --> Language Class Initialized
+INFO - 2021-03-30 10:51:14 --> Loader Class Initialized
+INFO - 2021-03-30 10:51:14 --> Helper loaded: url_helper
+INFO - 2021-03-30 10:51:14 --> Helper loaded: file_helper
+INFO - 2021-03-30 10:51:14 --> Helper loaded: form_helper
+INFO - 2021-03-30 10:51:14 --> Helper loaded: baseresponse_helper
+INFO - 2021-03-30 10:51:14 --> Helper loaded: string_helper
+INFO - 2021-03-30 10:51:14 --> Helper loaded: captcha_helper
+INFO - 2021-03-30 10:51:14 --> Database Driver Class Initialized
+DEBUG - 2021-03-30 10:51:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2021-03-30 10:51:15 --> Session: Class initialized using 'files' driver.
+INFO - 2021-03-30 10:51:15 --> Form Validation Class Initialized
+INFO - 2021-03-30 10:51:15 --> Model "Sitemodels" initialized
+INFO - 2021-03-30 10:51:15 --> Controller Class Initialized
+DEBUG - 2021-03-30 10:51:15 --> Config file loaded: /Applications/XAMPP/xamppfiles/htdocs/boma-php/application/config/rest.php
+INFO - 2021-03-30 10:51:15 --> Language file loaded: language/english/rest_controller_lang.php
+INFO - 2021-03-30 10:51:16 --> Helper loaded: inflector_helper
+INFO - 2021-03-30 10:51:16 --> Final output sent to browser
+DEBUG - 2021-03-30 10:51:16 --> Total execution time: 1.5974
+ERROR - 2021-03-30 12:18:22 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+INFO - 2021-03-30 12:18:22 --> Config Class Initialized
+INFO - 2021-03-30 12:18:22 --> Hooks Class Initialized
+DEBUG - 2021-03-30 12:18:22 --> UTF-8 Support Enabled
+INFO - 2021-03-30 12:18:22 --> Utf8 Class Initialized
+INFO - 2021-03-30 12:18:22 --> URI Class Initialized
+INFO - 2021-03-30 12:18:22 --> Router Class Initialized
+INFO - 2021-03-30 12:18:22 --> Output Class Initialized
+INFO - 2021-03-30 12:18:22 --> Security Class Initialized
+DEBUG - 2021-03-30 12:18:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-03-30 12:18:22 --> Input Class Initialized
+INFO - 2021-03-30 12:18:22 --> Language Class Initialized
+INFO - 2021-03-30 12:18:22 --> Loader Class Initialized
+INFO - 2021-03-30 12:18:22 --> Helper loaded: url_helper
+INFO - 2021-03-30 12:18:22 --> Helper loaded: file_helper
+INFO - 2021-03-30 12:18:22 --> Helper loaded: form_helper
+INFO - 2021-03-30 12:18:22 --> Helper loaded: baseresponse_helper
+INFO - 2021-03-30 12:18:22 --> Helper loaded: string_helper
+INFO - 2021-03-30 12:18:22 --> Helper loaded: captcha_helper
+INFO - 2021-03-30 12:18:22 --> Database Driver Class Initialized
+DEBUG - 2021-03-30 12:18:22 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2021-03-30 12:18:22 --> Session: Class initialized using 'files' driver.
+INFO - 2021-03-30 12:18:22 --> Form Validation Class Initialized
+INFO - 2021-03-30 12:18:22 --> Model "Sitemodels" initialized
+INFO - 2021-03-30 12:18:22 --> Controller Class Initialized
+DEBUG - 2021-03-30 12:18:22 --> Config file loaded: /Applications/XAMPP/xamppfiles/htdocs/boma-php/application/config/rest.php
+INFO - 2021-03-30 12:18:22 --> Language file loaded: language/english/rest_controller_lang.php
+INFO - 2021-03-30 12:18:22 --> Helper loaded: inflector_helper
+INFO - 2021-03-30 12:18:22 --> Final output sent to browser
+DEBUG - 2021-03-30 12:18:22 --> Total execution time: 0.7512
+ERROR - 2021-03-30 12:18:34 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+INFO - 2021-03-30 12:18:34 --> Config Class Initialized
+INFO - 2021-03-30 12:18:34 --> Hooks Class Initialized
+DEBUG - 2021-03-30 12:18:34 --> UTF-8 Support Enabled
+INFO - 2021-03-30 12:18:34 --> Utf8 Class Initialized
+INFO - 2021-03-30 12:18:34 --> URI Class Initialized
+INFO - 2021-03-30 12:18:34 --> Router Class Initialized
+INFO - 2021-03-30 12:18:34 --> Output Class Initialized
+INFO - 2021-03-30 12:18:34 --> Security Class Initialized
+DEBUG - 2021-03-30 12:18:34 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-03-30 12:18:34 --> Input Class Initialized
+INFO - 2021-03-30 12:18:34 --> Language Class Initialized
+INFO - 2021-03-30 12:18:34 --> Loader Class Initialized
+INFO - 2021-03-30 12:18:34 --> Helper loaded: url_helper
+INFO - 2021-03-30 12:18:34 --> Helper loaded: file_helper
+INFO - 2021-03-30 12:18:34 --> Helper loaded: form_helper
+INFO - 2021-03-30 12:18:34 --> Helper loaded: baseresponse_helper
+INFO - 2021-03-30 12:18:34 --> Helper loaded: string_helper
+INFO - 2021-03-30 12:18:34 --> Helper loaded: captcha_helper
+INFO - 2021-03-30 12:18:34 --> Database Driver Class Initialized
+DEBUG - 2021-03-30 12:18:34 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2021-03-30 12:18:34 --> Session: Class initialized using 'files' driver.
+INFO - 2021-03-30 12:18:34 --> Form Validation Class Initialized
+INFO - 2021-03-30 12:18:34 --> Model "Sitemodels" initialized
+INFO - 2021-03-30 12:18:34 --> Controller Class Initialized
+DEBUG - 2021-03-30 12:18:34 --> Config file loaded: /Applications/XAMPP/xamppfiles/htdocs/boma-php/application/config/rest.php
+INFO - 2021-03-30 12:18:34 --> Language file loaded: language/english/rest_controller_lang.php
+INFO - 2021-03-30 12:18:34 --> Helper loaded: inflector_helper
+INFO - 2021-03-30 12:18:34 --> Final output sent to browser
+DEBUG - 2021-03-30 12:18:34 --> Total execution time: 0.5174
+ERROR - 2021-03-30 12:19:22 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+INFO - 2021-03-30 12:19:22 --> Config Class Initialized
+INFO - 2021-03-30 12:19:22 --> Hooks Class Initialized
+DEBUG - 2021-03-30 12:19:22 --> UTF-8 Support Enabled
+INFO - 2021-03-30 12:19:22 --> Utf8 Class Initialized
+INFO - 2021-03-30 12:19:22 --> URI Class Initialized
+INFO - 2021-03-30 12:19:22 --> Router Class Initialized
+INFO - 2021-03-30 12:19:22 --> Output Class Initialized
+INFO - 2021-03-30 12:19:22 --> Security Class Initialized
+DEBUG - 2021-03-30 12:19:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-03-30 12:19:22 --> Input Class Initialized
+INFO - 2021-03-30 12:19:22 --> Language Class Initialized
+INFO - 2021-03-30 12:19:22 --> Loader Class Initialized
+INFO - 2021-03-30 12:19:22 --> Helper loaded: url_helper
+INFO - 2021-03-30 12:19:22 --> Helper loaded: file_helper
+INFO - 2021-03-30 12:19:22 --> Helper loaded: form_helper
+INFO - 2021-03-30 12:19:22 --> Helper loaded: baseresponse_helper
+INFO - 2021-03-30 12:19:22 --> Helper loaded: string_helper
+INFO - 2021-03-30 12:19:22 --> Helper loaded: captcha_helper
+INFO - 2021-03-30 12:19:22 --> Database Driver Class Initialized
+DEBUG - 2021-03-30 12:19:22 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2021-03-30 12:19:22 --> Session: Class initialized using 'files' driver.
+INFO - 2021-03-30 12:19:22 --> Form Validation Class Initialized
+INFO - 2021-03-30 12:19:22 --> Model "Sitemodels" initialized
+INFO - 2021-03-30 12:19:22 --> Controller Class Initialized
+DEBUG - 2021-03-30 12:19:22 --> Config file loaded: /Applications/XAMPP/xamppfiles/htdocs/boma-php/application/config/rest.php
+INFO - 2021-03-30 12:19:22 --> Language file loaded: language/english/rest_controller_lang.php
+INFO - 2021-03-30 12:19:22 --> Helper loaded: inflector_helper
+INFO - 2021-03-30 12:19:22 --> Final output sent to browser
+DEBUG - 2021-03-30 12:19:22 --> Total execution time: 0.6910
+ERROR - 2021-03-30 12:19:41 --> Could not find the specified $config['composer_autoload'] path: vendor/autoload.php
+INFO - 2021-03-30 12:19:41 --> Config Class Initialized
+INFO - 2021-03-30 12:19:41 --> Hooks Class Initialized
+DEBUG - 2021-03-30 12:19:41 --> UTF-8 Support Enabled
+INFO - 2021-03-30 12:19:41 --> Utf8 Class Initialized
+INFO - 2021-03-30 12:19:41 --> URI Class Initialized
+INFO - 2021-03-30 12:19:41 --> Router Class Initialized
+INFO - 2021-03-30 12:19:41 --> Output Class Initialized
+INFO - 2021-03-30 12:19:41 --> Security Class Initialized
+DEBUG - 2021-03-30 12:19:41 --> Global POST, GET and COOKIE data sanitized
+INFO - 2021-03-30 12:19:41 --> Input Class Initialized
+INFO - 2021-03-30 12:19:41 --> Language Class Initialized
+INFO - 2021-03-30 12:19:41 --> Loader Class Initialized
+INFO - 2021-03-30 12:19:41 --> Helper loaded: url_helper
+INFO - 2021-03-30 12:19:41 --> Helper loaded: file_helper
+INFO - 2021-03-30 12:19:41 --> Helper loaded: form_helper
+INFO - 2021-03-30 12:19:41 --> Helper loaded: baseresponse_helper
+INFO - 2021-03-30 12:19:41 --> Helper loaded: string_helper
+INFO - 2021-03-30 12:19:41 --> Helper loaded: captcha_helper
+INFO - 2021-03-30 12:19:41 --> Database Driver Class Initialized
+DEBUG - 2021-03-30 12:19:41 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2021-03-30 12:19:41 --> Session: Class initialized using 'files' driver.
+INFO - 2021-03-30 12:19:41 --> Form Validation Class Initialized
+INFO - 2021-03-30 12:19:41 --> Model "Sitemodels" initialized
+INFO - 2021-03-30 12:19:41 --> Controller Class Initialized
+DEBUG - 2021-03-30 12:19:41 --> Config file loaded: /Applications/XAMPP/xamppfiles/htdocs/boma-php/application/config/rest.php
+INFO - 2021-03-30 12:19:41 --> Language file loaded: language/english/rest_controller_lang.php
+INFO - 2021-03-30 12:19:41 --> Helper loaded: inflector_helper
+INFO - 2021-03-30 12:19:41 --> Final output sent to browser
+DEBUG - 2021-03-30 12:19:41 --> Total execution time: 0.4445

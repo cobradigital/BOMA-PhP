@@ -23,7 +23,8 @@ class MY_Controller extends RestController
     protected  $filters = [
         'filter_id' => array("MATCH"=>"master_material.id"),
         'filter_id_in' => array("IN"=>"master_material.id"),
-        'filter_name' => array("LIKE"=>"master_material.nama_material")
+        'filter_name' => array("LIKE"=>"master_material.nama_material"),
+        'spk_project_id' => array("MATCH"=>"projects_spk.projects_id")
     ];
     
 

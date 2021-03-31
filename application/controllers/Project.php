@@ -13,7 +13,7 @@ class Project extends MY_Controller {
     {
         $result = array();
         $build = $this->filter($this->input->get(), array("user_id" => $this->userid(), "publish"=> 1));
-        $data = $this->Sitemodels->get(true, "projects_spk", "id , (SELECT project_name FROM projects WHERE id = projects_spk.projects_id) as project_name, (SELECT name_category FROM master_category WHERE id = projects_spk.type_file) as file_type, file_path", $build);
+        $data = $this->Sitemodels->get(true, "projects_spk", "id , projects_id, no_surat, (SELECT project_name FROM projects WHERE id = projects_spk.projects_id) as project_name, (SELECT name_category FROM master_category WHERE id = projects_spk.type_file) as file_type, file_path", $build);
 
         if($data == '0'){
             $this->response( $this->Result("SUCCESS", array()), 200 );
@@ -41,6 +41,7 @@ class Project extends MY_Controller {
                     "projects_id" => $strPost['project_id'],
                     "user_id" => $this->userid(),
                     "type_file" => $strPost['type'],
+                    "no_surat" => $strPost['no_surat'],
                     'file_path' => $file_name,
                     'publish' => 1,
                     "created_at" => date("Y-m-d H:i:s"),
